@@ -4,6 +4,9 @@ class StringCalculator
             return 0
         end
         deli, numbers = check_delimiter(num)
+        tokens = numbers.split(/#{delimiter}|\n/)
+        values = tokens.map(&:to_i)
+        values.sum
     end
 
     private
