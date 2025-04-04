@@ -6,6 +6,10 @@ class StringCalculator
         deli, numbers = check_delimiter(num)
         tokens = numbers.split(/#{delimiter}|\n/)
         values = tokens.map(&:to_i)
+
+        negatives = values.select { |n| n < 0 }
+        raise "negative numbers not allowed: #{negatives.join(', ')}" unless negatives.empty?
+
         values.sum
     end
 
