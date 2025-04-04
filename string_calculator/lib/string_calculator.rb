@@ -1,9 +1,7 @@
 class StringCalculator
     def add(num)
-        unless num.present?
-            return 0
-        end
-        deli, numbers = check_delimiter(num)
+        return 0 if num.strip.empty?
+        delimiter, numbers = check_delimiter(num)
         tokens = numbers.split(/#{delimiter}|\n/)
         values = tokens.map(&:to_i)
 
