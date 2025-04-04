@@ -1,5 +1,7 @@
 class StringCalculator
     def add(num)
-        return 0 if num.empty?
+        unless num.present?
+            return 0
+        end
     end
 end
