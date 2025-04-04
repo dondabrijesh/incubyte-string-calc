@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+require_relative '../lib/string_calculator'
+
+calc = StringCalculator.new
+puts "Enter a string of numbers:"
+input = gets.chomp
+puts "Result: #{calc.add(input)}"
